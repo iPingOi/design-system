@@ -20,15 +20,13 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm i -g pnpm
-          pnpm config set auto-install-peers true
-          pnpm config set strict-peer-dependencies false
-          pnpm i
+          npm i -g yarn
+          yarn install
 
       - name: Build Storybook
-        run: pnpm run build-storybook
+        run: yarn build-storybook
 
       - name: Deploy Storybook
-        run: pnpm run deploy-storybook -- --ci --existing-output-dir=storybook-static
+        run: yarn deploy-storybook -- --ci --existing-output-dir=storybook-static
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
