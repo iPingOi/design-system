@@ -22,6 +22,7 @@ jobs:
         run: |
           npm i -g pnpm
           pnpm config set auto-install-peers true
+          pnpm config set strict-peer-dependencies false
           pnpm i
 
       - name: Build Storybook
