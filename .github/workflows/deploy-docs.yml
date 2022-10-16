@@ -22,7 +22,7 @@ jobs:
         pkg-manager: yarn
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: npm ci --legacy-peer-deps
 
       - name: Build Storybook
         run: npm run build-storybook
