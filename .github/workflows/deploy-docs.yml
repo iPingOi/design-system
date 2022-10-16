@@ -18,8 +18,11 @@ jobs:
         with:
           node-version: 16
 
+      - node/install-packages:
+        pkg-manager: yarn
+
       - name: Install dependencies
-        run: npm ci --legacy-peer-deps
+        run: yarn install --frozen-lockfile
 
       - name: Build Storybook
         run: npm run build-storybook
